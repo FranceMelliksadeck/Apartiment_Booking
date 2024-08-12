@@ -38,3 +38,4 @@ Route::get('admin/dashboard', [HomeController::class, 'index'])
     Route::get('/reject_book/{id}', [HomeController::class, 'reject_book']);  
     Route::get('/view_gallary', [HomeController::class, 'view_gallary']);  
     Route::post('/upload_gallary', [HomeController::class, 'upload_gallary']);
+    Route::get('/delete_gallary/{id}', [HomeController::class, 'delete_gallary']);

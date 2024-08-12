@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Apartiments;
-use App\models\Booking;
+use App\Models\Booking;
+use App\Models\Gallary;
 
 class HomeController extends Controller
 {
@@ -153,9 +154,37 @@ class HomeController extends Controller
       }
 
       public function view_gallary()
-      {
+      {   $gallary = Gallary::all();
 
-        return view ('admin.gallary');
+        return view ('admin.gallary',compact('gallary'));
       }
-}
+      public function upload_gallary(Request $request )
+      {
+        $data= new Gallary;
+
+        $image = $request->image;
+
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $imagename = time() . '.' . $image->getClientOriginalExtension();
+          $image->move('gallary', $imagename);
+          $data->image = $imagename;
+          $data->save();
+      
+          return redirect()->back();
+      } else {
+          return redirect()->back()->with('error', 'No image uploaded');
+      }
+        }
+        public function delete_gallary($id)
+        {
+          $data = gallary::find($id);
+
+          $data->delete();
+          
+          return redirect()->back();
+        }
+      }
+
+
    

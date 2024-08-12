@@ -27,9 +27,8 @@ td {
 td.phone, td.arrival-date, td.email {
     padding-right: 30px;  
 }
+</style>
 
-
-    </style>
    @include ('admin.css')
   </head>
   <body>

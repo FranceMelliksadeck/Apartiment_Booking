@@ -48,7 +48,7 @@
                      <p style="padding: 12px;">{{$apartiment->description}}</p>
                      <h4 style="padding: 12px;">Free WFi: {{$apartiment->wifi}}</h4>
                      <h4 style="padding: 12px;">Apartiment Type: {{$apartiment->apartiment_type}}</h4>
-                     <h3 style="padding: 12px;">Price: Tsh{{$apartiment->price}}/=</h3>
+                     <h3 style="padding: 12px;">Price: ${{$apartiment->price}}/=</h3>
                   </div>
                </div>
             </div>
