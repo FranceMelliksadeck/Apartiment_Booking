@@ -40,7 +40,7 @@
           <div class="container-fluid">
 
           <table class="table_deg">
-
+          <center><h1 style="font-size: 60px; font-weight:bold;">AVAILABLE APARTIMENTS<h1></center>
             <tr>
                 <th class="th_deg"> apartiment tittle</th>
                 <th class="th_deg">description</th>
