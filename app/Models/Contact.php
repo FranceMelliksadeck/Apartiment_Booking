@@ -4,17 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
-class Apartiments extends Model
+class Contact extends Model
 {
     use HasFactory;
+    use Notifiable;
+
     protected $fillable = [
-        'apartiment_tittle',
-        'image',
-        'description',
-        'location',
-        'price',
-        'wifi',
-        'apartiment_type'
+
+        'name',
+        'email', 
+        'phone',
+        'message',
+        
     ];
 }

@@ -12,7 +12,7 @@
 }
 
 .th_deg {
-    background-color: blue;
+    background-color: powderblue;
     padding: 8px;
 }
 

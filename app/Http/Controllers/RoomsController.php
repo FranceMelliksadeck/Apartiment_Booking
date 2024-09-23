@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Apartiments;
 use App\Models\Booking;
 
+
 class RoomsController extends Controller
 {
     public function apartiment_details($id)
@@ -59,5 +60,10 @@ class RoomsController extends Controller
    
 
    }
-
-}
+   public function apartiment_location($id)
+   {
+    $apartiment = Apartiments::find($id);
+    
+    return view ('home.apartiment_location',compact('apartiment'));
+   }
+  }

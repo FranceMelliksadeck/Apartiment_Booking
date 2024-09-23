@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Apartiments;
 use App\Models\Booking;
 use App\Models\Gallary;
+use App\Models\Contact;
+use Notification;
+use App\Notifications\MyFirstNotification;
+
 
 class HomeController extends Controller
 {
@@ -17,7 +21,9 @@ class HomeController extends Controller
    {
     $apartiment = apartiments::all();
 
-    return view ('home.index', compact('apartiment'));
+    $gallary = gallary::all();
+
+    return view ('home.index', compact('apartiment','gallary'));
    }
 
 
@@ -33,6 +39,7 @@ class HomeController extends Controller
         $data->apartiment_tittle = $request-> tittle;
         $data->description= $request-> description;
         $data->price = $request-> price;
+        $data->location = $request->location;
         $data->wifi = $request-> wifi;
         $data->apartiment_type = $request-> type;
         $image = $request-> image;
@@ -87,6 +94,8 @@ class HomeController extends Controller
    $data->description = $request->description; 
 
    $data->price= $request->price;
+
+   $data->location = $request->location;
 
    $data->wifi= $request->wifi;  
  
@@ -184,7 +193,79 @@ class HomeController extends Controller
           
           return redirect()->back();
         }
-      }
+        public function  contact (Request $request)
+
+        
+   {
+     $data = new contact;
+
+     $data->name = $request-> name;
+     $data->email = $request-> email;
+     $data->phone= $request-> phone;
+     $data->message = $request-> message;
+
+     $data->save();
+
+   return redirect ()->back()->with('message', 'Message sent Successfully');;
+   }
+
+   public function messages ()
+   {
+    $data = contact::all();
+
+   return view('admin.messages',compact('data'));
+   }
+
+   public function send_mail($id)
+   {
+
+       $data = contact::find($id);
+
+       return view('admin.send_mail',compact('data'));
+   }
+   public function mail(Request $request,$id)
+   {
+      $data = contact::find($id);
+
+      $details = [
+        'greeting' => $request->greeting,
+        'body' => $request->body,
+        'action_text' => $request->action_text,
+        'action_url' => $request->action_url,
+        'endline' => $request->endline,
+    ];
+    
+    Notification::send($data, new MyFirstNotification($details));
+    
+    return redirect()->back();
+
+   }
+   public function our_apartiment()
+   {
+    $apartiment = apartiments::all();
+
+    return view('home.our_apartiment',compact('apartiment'));
+   }
+   public function gallary2()
+   {
+    $gallary = gallary::all();
+
+    return view('home.gallary_page',compact('gallary'));
+    
+   }
+   public function about()
+   {
+    return view('home.about_page');
+   }
+   public function contact_us()
+   {
+       return view('home.contact_page');
+   }
+  
+  }
+
+        
+      
 
 
    

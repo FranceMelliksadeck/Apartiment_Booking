@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('apartiment_tittle')->nullable();
             $table->string('image')->nullable();
             $table->longtext('description')->nullable();
+            $table->string('location')->nullable();
             $table->string('price')->nullable();
             $table->string('wifi')->default('yes');
             $table->string('apartiment_type')->nullable();

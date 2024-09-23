@@ -48,6 +48,11 @@
                         <input type="number" name="price">
                     </div> 
                     <div class="div_deg">
+                        <label>Location</label>
+                        <input type="text" name="location" >
+                    
+                    </div>
+                    <div class="div_deg">
                         <label>Apartiment Type</label>
                         <select name="type">
                             <option selected value="regular">Regular</option>
@@ -55,6 +60,7 @@
                             <option value="deluxe">Deluxe</option>
                         </select>
                     </div> 
+                    
                     <div class="div_deg">
                         <label>Free Wifi</label>
                         <select name="wifi">
