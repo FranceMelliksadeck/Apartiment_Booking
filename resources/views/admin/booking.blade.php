@@ -12,7 +12,7 @@
 }
 
 .th_deg {
-    background-color: blue;
+    background-color: powderblue;
     padding: 8px;
 }
 
@@ -43,7 +43,7 @@ td.phone, td.arrival-date, td.email {
 
 
           <table class="table_deg">
-
+          <center><h1 style="font-size: 60px; font-weight:bold;">ALL BOOKINGS<h1></center>
             <tr>
                 <th class="th_deg"> apartiment_id </th>
                 <th class="th_deg">Customer name</th>

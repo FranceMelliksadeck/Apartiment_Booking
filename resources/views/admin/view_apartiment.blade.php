@@ -15,7 +15,7 @@
 
     .th_deg
     { 
-      background-color: blue;
+      background-color: powderblue;
       padding: 10px;
     }
     tr
@@ -40,22 +40,25 @@
           <div class="container-fluid">
 
           <table class="table_deg">
-
+          <center><h1 style="font-size: 60px; font-weight:bold;">AVAILABLE APARTIMENTS<h1></center>
             <tr>
                 <th class="th_deg"> apartiment tittle</th>
                 <th class="th_deg">description</th>
                 <th class="th_deg">Price</th>
+                <th class="th_deg">Location</th>
                 <th class="th_deg">Wifi</th>
                 <th class="th_deg">apartiment type</hth>
                 <th class="th_deg">Image</th>
                 <th class="th_deg">Delete</th>
                 <th class="th_deg">Update</th>
+                
             </tr>
             @foreach($data as $data )
             <tr>
                 <td>{{$data->apartiment_tittle}}</td>
                 <td>{!! Str::limit($data->description,100)!!}</td>
                 <td>${{$data->price}}</td>
+                <td>{{$data->location}}</td>
                 <td>{{$data->wifi}}</td>
                 <td>{{$data->apartiment_type}}</td>
                 <td>

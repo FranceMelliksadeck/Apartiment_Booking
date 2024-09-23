@@ -48,6 +48,7 @@
                      <p style="padding: 12px;">{{$apartiment->description}}</p>
                      <h4 style="padding: 12px;">Free WFi: {{$apartiment->wifi}}</h4>
                      <h4 style="padding: 12px;">Apartiment Type: {{$apartiment->apartiment_type}}</h4>
+                     <h4 style="padding: 12px;">Location: {{$apartiment->location}}</h4>
                      <h3 style="padding: 12px;">Price: ${{$apartiment->price}}/=</h3>
                   </div>
                </div>
@@ -111,6 +112,9 @@
                      <input type="submit" class="btn btn-success" value="Book Now">  
                   </div>
                </form>
+               <div>
+                  <a class="btn btn_success" href="{{url('apartiment_location')}}"> Direction</a>
+               </div>
             </div>
          </div> 
       </div>

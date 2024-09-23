@@ -52,6 +52,11 @@
                         <input type="number" name="price" value="{{$data->price}}">
                     </div> 
                     <div class="div_deg">
+                        <label>Location</label>
+                        <input type="text" name="location" value="{{$data->apartiment_location}}">
+                    
+                    </div>
+                    <div class="div_deg">
                         <label>Apartiment Type</label>
                         <select name="type">
                             <option selected value="{{$data->apartiment_type}}">{{$data->apartiment_type}}</option>
@@ -59,7 +64,8 @@
                             <option value="premium">Premium</option>
                             <option value="deluxe">Deluxe</option>
                         </select>
-                    </div>  
+                        </div>
+                       
                     <div class="div_deg">
                         <label>Free Wifi</label>
                         <select name="wifi">
